@@ -1,0 +1,586 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #0d0d0d;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,h2,h3,h4,h5,p {
+  margin-bottom: 10px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+header nav a {
+  margin-left: 20px;
+  transition: 0.3s;
+}
+header nav a:hover {
+  color: #f5a1c1;
+}
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+.hero h2 {
+  font-size: 42px;
+  color: #f5a1c1;
+  text-shadow: 0 0 15px rgba(255,182,193,0.5);
+}
+.hero p {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #ddd;
+}
+.glow-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 2px solid #f5a1c1;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+.glow-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f5a1c1, 0 0 40px #f5a1c1;
+}
+
+/* Products */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+  padding: 100px 50px;
+  z-index: 1;
+  position: relative;
+}
+.product {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.product img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.product:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(245,161,193,0.5);
+}
+.product img:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+.product h3 {
+  margin-top: 15px;
+  font-size: 22px;
+}
+.product p {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 8px;
+}
+.price {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f5a1c1;
+}
+.review-btn {
+  margin-top: 12px;
+}
+
+/* Review Modal */
+.review-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13,13,13,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: 200;
+}
+.review-box {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+.review-box input,
+.review-box textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  resize: none;
+}
+.review-box .close-modal {
+    /* Styled Review Modal */
+.review-box {
+  background: rgba(255, 255, 255, 0.05); /* полупрозрачный фон */
+  backdrop-filter: blur(20px);           /* размытие фона */
+  border: 2px solid rgba(245,161,193,0.4); /* светящаяся рамка */
+  box-shadow: 0 0 30px rgba(245,161,193,0.6); /* glow эффект */
+  border-radius: 25px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(245,161,193,0.8);
+}
+
+.review-box h3 {
+  color: #f5a1c1;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(245,161,193,0.7);
+}
+
+.review-box input,
+.review-box textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(245,161,193,0.3);
+  box-shadow: 0 0 10px rgba(245,161,193,0.2);
+  transition: 0.3s;
+}
+
+.review-box input:focus,
+.review-box textarea:focus {
+  border-color: #f5a1c1;
+  box-shadow: 0 0 15px rgba(245,161,193,0.5);
+}
+
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+.review-box .send-review {
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
+footer h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+footer p {
+  margin-bottom: 5px;
+  color: #ccc;
+}
+footer .socials {
+  margin-top: 15px;
+}
+footer .socials img {
+  width: 30px;
+  margin: 0 10px;
+  filter: grayscale(1);
+  transition: 0.3s;
+}
+footer .socials img:hover {
+  filter: none;
+  transform: scale(1.2);
+}
+
+/* Canvas background */
+#bubbles {
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+
+/* Fog */
+.fog {
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at center, rgba(245,161,193,0.05), rgba(0,0,0,0.8));
+  pointer-events: none;
+  z-index:0;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+  header nav {
+    margin-top: 10px;
+  }
+  .products {
+    grid-template-columns: repeat(2,1fr);
+    padding: 80px 20px;
+  }
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}
+@media (max-width:480px){
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+/* Styled Review Modal Enhancement */
+.review-box {
+  background: rgba(255, 255, 255, 0.05); /* полупрозрачный фон */
+  backdrop-filter: blur(20px);           /* размытие фона */
+  border: 2px solid rgba(245,161,193,0.4); /* светящаяся рамка */
+  box-shadow: 0 0 30px rgba(245,161,193,0.6); /* glow эффект */
+  border-radius: 25px;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.review-modal.show .review-box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.review-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px rgba(245,161,193,0.8);
+}
+
+.review-box h3 {
+  color: #f5a1c1;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(245,161,193,0.7);
+}
+
+.review-box input,
+.review-box textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(245,161,193,0.3);
+  box-shadow: 0 0 10px rgba(245,161,193,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  margin: 10px 0;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+  resize: none;
+}
+
+.review-box input:focus,
+.review-box textarea:focus {
+  border-color: #f5a1c1;
+  box-shadow: 0 0 15px rgba(245,161,193,0.5);
+}
+/* Modern Glassmorphic Review Modal */
+.review-box {
+  background: rgba(255, 255, 255, 0.08);   /* более прозрачный фон */
+  backdrop-filter: blur(25px) saturate(150%); /* сильное размытие + лёгкая насыщенность */
+  -webkit-backdrop-filter: blur(25px) saturate(150%);
+  border: 1px solid rgba(245,161,193,0.3);  /* нежная светящаяся рамка */
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(245,161,193,0.3); /* мягкая тень и glow */
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.review-modal.show .review-box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.review-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 50px rgba(245,161,193,0.6), 0 8px 32px rgba(245,161,193,0.4);
+}
+
+.review-box h3 {
+  color: #f5a1c1;
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px rgba(245,161,193,0.7);
+}
+
+.review-box input,
+.review-box textarea {
+  background: rgba(255, 255, 255, 0.12);  /* прозрачные поля */
+  border: 1px solid rgba(245,161,193,0.25);
+  box-shadow: 0 0 10px rgba(245,161,193,0.15);
+  border-radius: 12px;
+  padding: 12px;
+  width: 90%;
+  margin: 10px 0;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+  resize: none;
+}
+
+.review-box input:focus,
+.review-box textarea:focus {
+  border-color: #f5a1c1;
+  box-shadow: 0 0 20px rgba(245,161,193,0.5);
+}
+/* Modern overlay when review modal is open */
+.review-modal {
+  background: rgba(13, 13, 13, 0.4); /* полупрозрачный тёмный фон */
+  backdrop-filter: blur(8px) brightness(1.2); /* размытие и лёгкая подсветка */
+  -webkit-backdrop-filter: blur(8px) brightness(1.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.review-modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+/* Review Modal modern look */
+.review-modal {
+  background: rgba(13, 13, 13, 0.6); /* прозрачность */
+  backdrop-filter: blur(10px); /* размытие фона */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s ease; /* плавное появление подсветки */
+  z-index: 200;
+}
+
+.review-modal.show {
+  background: rgba(245, 161, 193, 0.1); /* мягкая подсветка при открытии */
+}
+
+.review-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px) brightness(1.2);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(245, 161, 193, 0.3); /* мягкая подсветка самой формы */
+  transition: all 0.4s ease;
+}
+/* Темный и размытый фон при открытии модалки */
+body.modal-open .products,
+body.modal-open .hero,
+body.modal-open header,
+body.modal-open footer {
+  filter: blur(5px) brightness(0.5);
+  transition: filter 0.4s ease;
+  pointer-events: none; /* чтобы фон был неактивен */
+}
+header .header-socials {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+header .header-socials img {
+  width: 25px;
+  filter: grayscale(1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+header .header-socials img:hover {
+  filter: none;
+  transform: scale(1.2);
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.social-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-header img {
+  width: 28px;
+  filter: brightness(0) invert(1); /* делает иконки белыми */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social-header img:hover {
+  filter: brightness(1.2) invert(1);
+  transform: scale(1.2);
+}
+/* Украшение футера */
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(13,13,13,0.6); /* полупрозрачный фон */
+  backdrop-filter: blur(15px);      /* размытие фона */
+  border-top: 1px solid rgba(245,161,193,0.2); /* легкая линия сверху */
+  box-shadow: 0 -5px 25px rgba(245,161,193,0.1); /* мягкое свечение сверху */
+  position: relative;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #f5a1c1;
+  text-shadow: 0 0 10px rgba(245,161,193,0.3);
+}
+
+footer p {
+  margin-bottom: 8px;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+footer p:hover {
+  color: #fff;
+}
+
+footer .socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .socials img {
+  width: 32px;
+  filter: brightness(0) invert(1); /* белые иконки */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+footer .socials img:hover {
+  filter: brightness(1.3) invert(1);
+  transform: scale(1.3);
+  box-shadow: 0 0 15px rgba(245,161,193,0.4); /* мягкое свечение */
+}
+
+/* Легкая анимация «тумана» футера */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(245,161,193,0.05), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.toys-section {  
+  margin-top: -200px; 
+  transition: margin 0.3s; 
+}
+/* Анимация появления сайта */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
